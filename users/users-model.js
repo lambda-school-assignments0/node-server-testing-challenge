@@ -4,26 +4,21 @@ function add(user) {
     return db("users").insert(user);
 }
 
-function remove(user) {
-    return null;
-}
-
-function update(user) {
-    return null;
+function remove(id) {
+    return db("users").where(id).first().del();
 }
 
 function find() {
-    return null;
+    return db("users");
 }
 
-function findById(user) {
-    return null;
+async function findById(id) {
+    return db("users").where(id).first();
 }
 
 module.exports = {
     add,
     remove,
-    update,
     find,
     findById
 }

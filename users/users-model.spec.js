@@ -91,7 +91,7 @@ describe("users model", () => {
             });
 
             const users = await Users.findById({ id: 2 });
-            expect(users.id).toBe(2);
+            expect(users.username).toBe("TestUser2");
         });
     });
 });
